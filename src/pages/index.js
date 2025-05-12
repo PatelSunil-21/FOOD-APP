@@ -76,8 +76,8 @@ let datas = props.data.data;
           </span>Non-Veg</button>
         </div>
         {categoryArray.map((category, index) => {
-          return <div>
-            <div key={index} className="text-4xl mt-10 mb-3 uppercase font-bold">
+          return <div key={index}>
+            <div  className="text-4xl mt-10 mb-3 uppercase font-bold">
               {category}
 
             </div>
