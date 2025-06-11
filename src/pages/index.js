@@ -19,19 +19,18 @@ const geistMono = Geist_Mono({
 
 export default function Home(props) {
 
-let datas = props.data.data;
+let datas = props.data.data || [];
 
   
   let categories = new Set();
   const [typeFilter, setTypeFilter] = useState(false);
   const foodData = []
-  const handleData = () => {
-   datas.map((data) => {
-      return foodData.push(data), categories.add(data.category)
-    })
-
-
-  }
+   const handleData = () => {
+    datas.map((data) => {
+      foodData.push(data);
+      categories.add(data.category);
+    });
+  };
 
   handleData()
 
@@ -112,7 +111,7 @@ export async function getStaticProps() {
       .catch((error) => error.message);
 
     data = await JSON.parse(JSON.stringify(pizzaData)); // step required during deployment in staticProps
-    console.log("Data",data.data);
+    // console.log("Data",data.data);
     
   } catch (error) {
     console.log(error.message);
