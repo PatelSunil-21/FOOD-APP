@@ -1,5 +1,6 @@
 import Card from "@/components/home/Card";
 import CarouselComponent from "@/components/home/Carousel";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import { useState } from "react";
 import { baseUrl } from "@/utils/baseUrl";
